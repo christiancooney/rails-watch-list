@@ -13,9 +13,7 @@
           <div class="card-body">
                 <h5 class="card-title"><%= bookmark.movie.title %></h5>
                 <p class="card-text"><%= bookmark.comment%></p>
-             <button><%= link_to "Delete", bookmark_path(bookmark),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-              %></button>
+
           </div>
         </div>
       </div>
