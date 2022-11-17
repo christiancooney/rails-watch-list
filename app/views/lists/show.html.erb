@@ -1,0 +1,36 @@
+
+<div class="container text-center border">
+  <h1>Show list</h1>
+<div class="card text-center">
+  <h2><%= @list.name %></h2>
+
+
+<div class="row row-cols-1 row-cols-md-3">
+     <% @list.bookmarks.each do |bookmark| %>
+      <div class="col-md-4">
+        <div class="card h-100">
+                <img class="card-img-top" src="<%= bookmark.movie.poster_url%>" alt="Card image cap">
+          <div class="card-body">
+                <h5 class="card-title"><%= bookmark.movie.title %></h5>
+                <p class="card-text"><%= bookmark.comment%></p>
+             <button><%= link_to "Delete", bookmark_path(bookmark),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+              %></button>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+</div>
+  <div class="card text-center">
+
+    <button><%= link_to "Delete Entire List", list_path,
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %></button>
+
+    <button><%= link_to "Add new movies to List", edit_list_path %></button>
+  </div>
+    <div class="card text-center">
+      <button><%= link_to "Back to lists", lists_path %></button>
+    </div>
+</div>

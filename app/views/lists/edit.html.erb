@@ -1,0 +1,41 @@
+
+<header class="container text-center border">
+  <h1>Add Movies</h1>
+</header>
+
+<div class="card text-center">
+  <h2><%= @list.name %></h2>
+</div>
+
+<div class="card text-center">
+  <div class="container text-center">
+    <h2>Movies</h2>
+
+<button><%= link_to "add movies to list", new_list_bookmark_path(@list) %></button>
+
+
+<div class="row row-cols-1 row-cols-md-3">
+     <% @movies.each do |movie| %>
+      <div class="col-md-4">
+        <div class="card h-100">
+                <img class="card-img-top" src="<%= movie.poster_url%>" alt="Card image cap">
+          <div class="card-body">
+                <h5 class="card-title"><%= movie.title %></h5>
+                <p class="card-text"><%= movie.overview%></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+<div class="card text-center">
+<button><%= link_to "Back to lists", lists_path %></button>
+</div>
+
+
+<%# <button><%= link_to {:action => :create}, :method => :post %></button> %>

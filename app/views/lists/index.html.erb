@@ -1,0 +1,29 @@
+
+<div class="container text-center border">
+<h1>Show lists</h1>
+<div class="card text-center">
+<h2><%= @lists.name %></h2>
+
+
+<div class="card text-center">
+<ol class="list-group">
+  <% @lists.each do |list| %>
+    <li class="list-group-item"><%= link_to list.name, list_path(list)%></li>
+  <% end %>
+  </div>
+
+
+
+
+
+</div>
+<div class="card text-center">
+
+
+
+
+<div class="card text-center">
+<button><%= link_to "Add List", new_list_path(@list) %></button>
+</div>
+
+</div>

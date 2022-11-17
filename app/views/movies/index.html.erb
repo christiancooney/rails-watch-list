@@ -1,0 +1,9 @@
+<div class="container text-center">
+<h1>Movies</h1>
+
+<div class="card text-center">
+<ol class="list-group">
+  <% @movies.each do |list| %>
+    <li class="list-group-item"><%= link_to list.title, list_path(list)%></li>
+  <% end %>
+  </div>
