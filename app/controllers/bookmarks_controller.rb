@@ -1,6 +1,6 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: %i[show edit update destroy]
-  before_action :set_list, only: %i[show new create edit update destroy]
+  before_action :set_bookmark, only: %i[show update destroy]
+  before_action :set_list, only: %i[show new create]
 
   def index
     @bookmarks = Bookmark.all
