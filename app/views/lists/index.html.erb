@@ -1,24 +1,20 @@
+  <div class="container">
 
-<div class="container text-center border">
-<h1>Show lists</h1>
-<div class="card text-center">
-<h2><%= @lists.name %></h2>
-
-
-<div class="card text-center">
-<ol class="list-group">
-  <% @lists.each do |list| %>
-    <li class="list-group-item"><%= link_to list.name, list_path(list)%></li>
-    <img src="https://media.istockphoto.com/id/458646439/photo/dvd-movie-collection-studio-shot.jpg?s=612x612&w=0&k=20&c=FEYe4vxGpfqKsG8QhcLxAteoUK5lxmN9wFv2j2wUUug=" alt="coll">
-  <% end %>
-  </div>
+  <header> <h1>Show lists</h1></header>
+  <div class="card text-center">
+    <h2><%= @lists.name %></h2>
 
 
-
-
-
+<div class="card-trip">
+<% @lists.each do |list| %>
+    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= link_to list.name, list_path(list)%></h2>
+      <% end %>
+    </div>
 </div>
-<div class="card text-center">
+</div>
 
 
 
@@ -26,5 +22,11 @@
 <div class="card text-center">
 <button><%= link_to "Add List", new_list_path(@list) %></button>
 </div>
+
+</div>
+
+
+
+
 
 </div>
